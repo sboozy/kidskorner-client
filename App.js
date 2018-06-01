@@ -13,11 +13,10 @@ import Login from './src/pages/Login';
 import Register from './src/pages/Register';
 import DrawerNav from './src/components/DrawerNav';
 
-const BASE_URL = "https://kidskorner-api.herokuapp.com"
-
 export default class App extends React.Component {
 
   render() {
+    console.disableYellowBox = true;
     return (
       <AppNavigator />
     );

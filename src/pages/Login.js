@@ -15,6 +15,7 @@ export default class Login extends React.Component {
   }
 
   render() {
+    // console.log('i see you')
     return (
       <View style={styles.container}>
         <Text style={styles.textName} >KidsKorner</Text>
