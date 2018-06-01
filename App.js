@@ -22,7 +22,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
 
          <StatusBar barStyle="dark-content"/>
-         <Route />
+         <Login />
 
       </View>
     );
