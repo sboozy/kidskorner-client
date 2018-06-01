@@ -3,11 +3,17 @@ import {
   StyleSheet,
   Text,
   View,
+  TouchableOpacity
 } from 'react-native';
 
 import RegisterForm from '../components/RegisterForm';
 
 export default class Register extends React.Component {
+
+  static navigationOptions = {
+    header: null
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -18,7 +24,7 @@ export default class Register extends React.Component {
 
         <View style={styles.signupContainer}>
           <Text style={styles.signupText}>Already have an account? </Text>
-          <Text style={styles.SignupTextButton}>Login</Text>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}><Text style={styles.SignupTextButton}>Login</Text></TouchableOpacity>
         </View>
       </View>
       )
@@ -29,9 +35,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#607d8b',
-    marginVertical: 100,
+    paddingVertical: 100,
   },
   textName: {
     flexGrow: 1,

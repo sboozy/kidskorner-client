@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { StackNavigator } from 'react-navigation';
+
 import {
   StyleSheet,
   Text,
@@ -6,12 +8,10 @@ import {
   StatusBar
 } from 'react-native';
 
-import Route from './src/Router';
 
 import Login from './src/pages/Login';
 import Register from './src/pages/Register';
-
-
+import DrawerNav from './src/components/DrawerNav';
 
 const BASE_URL = "https://kidskorner-api.herokuapp.com"
 
@@ -19,22 +19,22 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-
-         <StatusBar barStyle="dark-content"/>
-         <Login />
-
-      </View>
+      <AppNavigator />
     );
   }
 }
+
+const AppNavigator = new StackNavigator({
+  Login: { screen: Login },
+  Register: { screen: Register },
+  DrawerNav: {screen: DrawerNav }
+})
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#607d8b',
     width: '100%',
   },
 });
@@ -49,7 +49,7 @@ const styles = StyleSheet.create({
   // }
 
   // fetchUsers() {
-  //   // fetch(`${BASE_URL}/users`)
+    // fetch(`${BASE_URL}/users`)
   //   fetch('https://anapioficeandfire.com/api/characters/583')
   //   .then(resp =>{
   //     return resp.json()

@@ -6,12 +6,13 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-
 import LoginForm from '../components/LoginForm';
 
-// const Logo =
-
 export default class Login extends React.Component {
+
+  static navigationOptions = {
+    header: null
+  }
 
   render() {
     return (
@@ -19,11 +20,11 @@ export default class Login extends React.Component {
         <Text style={styles.textName} >KidsKorner</Text>
         <Text style={styles.textWelcome} >Welcome to My App!</Text>
 
-        <LoginForm />
+        <LoginForm navigation={this.props.navigation}/>
 
         <View style={styles.signupContainer}>
           <Text style={styles.signupText}>Don't have an account? </Text>
-          <TouchableOpacity onPress={this.register}><Text style={styles.SignupTextButton}>Sign up!</Text></TouchableOpacity>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.SignupTextButton}>Sign up!</Text></TouchableOpacity>
         </View>
       </View>
     )
@@ -34,9 +35,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
     backgroundColor: '#607d8b',
-    marginVertical: 100,
+    paddingVertical: 100,
   },
   textName: {
     flexGrow: 1,

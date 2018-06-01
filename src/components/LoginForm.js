@@ -4,10 +4,18 @@ import {
   Text,
   View,
   TextInput,
+  Button,
   TouchableOpacity
 } from 'react-native';
 
+import DrawerNav from './DrawerNav';
+import { DrawerNavigator } from 'react-navigation';
+
 export default class LoginForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -19,7 +27,8 @@ export default class LoginForm extends React.Component {
                    secureTextEntry={true}
                    placeholderTextColor="#ffffff" />
         <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginText}>Login</Text>
+          <Text style={styles.loginText}
+                onPress={() => this.props.navigation.navigate('DrawerNav')}>Login</Text>
         </TouchableOpacity>
       </View>
       )
