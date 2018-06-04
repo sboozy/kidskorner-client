@@ -16,10 +16,10 @@ Other things to consider:
 + payment capabilities through the app
 
 ## WIREFRAMES
-![](./_design/wireframes/all_products.png) 
-![](./_design/wireframes/single_posting.png) 
-![](./_design/wireframes/sell_product.png) 
-![](./_design/wireframes/messenging.png) 
+![](./_design/wireframes/all_products.png)  
+![](./_design/wireframes/single_posting.png)   
+![](./_design/wireframes/sell_product.png)  
+![](./_design/wireframes/messaging.png)  
 
 ## Pages/Components
 + Login/Register Page
