@@ -15,6 +15,12 @@ Other things to consider:
 + Marketplace based on location (zipcode)
 + payment capabilities through the app
 
+## WIREFRAMES
+![](./_design/wireframes/all_products.png) 
+![](./_design/wireframes/single_posting.png) 
+![](./_design/wireframes/sell_product.png) 
+![](./_design/wireframes/messenging.png) 
+
 ## Pages/Components
 + Login/Register Page
 + All postings page
@@ -38,10 +44,20 @@ Other things to consider:
 + Edit User Profile
     + Nav Bar
 
+## TABLES
+![](./_design/tables/tables.png) 
+
 ## TECHNOLOGIES
 #### Frontend
 + React Native
 
 #### Backend
-+ Rails (with ActionCable)
++ ~~Rails (with ActionCable)~~ 
++ Node.js/Express
 + Postgresql
+
+#### Other
++ Postman (for testing)
++ LucidChart (for table schema)
++ Adobe XD (for wireframes)
++ Heroku (hosting backend API server)
