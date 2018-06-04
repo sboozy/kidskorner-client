@@ -9,16 +9,21 @@ import {
 import Login from './src/pages/Login';
 import Register from './src/pages/Register';
 import DrawerNav from './src/components/DrawerNav';
+import Create from './src/pages/Create';
 
 const AppNav = StackNavigator({
   Login: {screen: Login},
   Register: {screen: Register},
   DrawerNav: {screen: DrawerNav,
               navigationOptions: {
-                title: "Home",
+                title: "Items For Sale",
                 headerLeft: null  //removes back button to signin page
               }
             },
+  Create: {screen: Create,
+           navigationOptions: {
+            title: "Post Item",
+           }}
 })
 
 export default class App extends React.Component {

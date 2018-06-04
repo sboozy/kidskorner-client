@@ -12,6 +12,7 @@ import { NavigationActions } from 'react-navigation';
 
 const BASE_URL = "https://kidskorner-api.herokuapp.com"
 
+
 export default class Home extends React.Component {
     constructor(props) {
     super(props)
@@ -51,7 +52,6 @@ export default class Home extends React.Component {
 
   render() {
     console.log('home component', this.state.data)
-    // const picUrl = item.image_url;
     return (
       <View style={styles.container}>
         <TouchableHighlight style={styles.menu} onPress={() => this.props.navigation.openDrawer()}>

@@ -4,7 +4,7 @@ import {
   Text,
   View,
   TextInput,
-  TouchableOpacity
+  TouchableHighlight
 } from 'react-native';
 
 const BASE_URL = "https://kidskorner-api.herokuapp.com"
@@ -82,11 +82,11 @@ export default class RegisterForm extends React.Component {
                    ref={input => this.pw = input}
                    onChangeText={pw_hash => this.setState({pw_hash})}
                    />
-        <TouchableOpacity style={styles.registerButton}>
+        <TouchableHighlight style={styles.registerButton}>
           <Text style={styles.registerText}
                 onPress={this.registerUser} >Sign up!
           </Text>
-        </TouchableOpacity>
+        </TouchableHighlight>
       </View>
       )
   }

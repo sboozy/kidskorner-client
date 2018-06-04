@@ -3,7 +3,7 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableHighlight
 } from 'react-native';
 
 import LoginForm from '../components/LoginForm';
@@ -24,7 +24,7 @@ export default class Login extends React.Component {
 
         <View style={styles.signupContainer}>
           <Text style={styles.signupText}>Don't have an account? </Text>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.SignupTextButton}>Sign up!</Text></TouchableOpacity>
+          <TouchableHighlight onPress={() => this.props.navigation.navigate('Register')}><Text style={styles.SignupTextButton}>Sign up!</Text></TouchableHighlight>
         </View>
       </View>
     )
