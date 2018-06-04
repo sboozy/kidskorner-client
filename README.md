@@ -16,14 +16,18 @@ Other things to consider:
 + payment capabilities through the app
 
 ## WIREFRAMES
--Scrolling list of all products
+---Scrolling list of all products  
 ![](./_design/wireframes/all_products.png)  
--Single product posting
+----
+---Single product posting  
 ![](./_design/wireframes/single_posting.png)   
--Post a product page
+----
+---Post a product page  
 ![](./_design/wireframes/sell_product.png)  
--Messager capability
+----
+---Messenger capability  
 ![](./_design/wireframes/messaging.png)  
+----
 
 ## Pages/Components
 + Login/Register Page
