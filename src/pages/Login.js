@@ -9,10 +9,9 @@ import {
 import LoginForm from '../components/LoginForm';
 
 export default class Login extends React.Component {
-
   static navigationOptions = {
-    header: null
-  }
+    title: "Sign In",
+  };
 
   render() {
     // console.log('i see you')

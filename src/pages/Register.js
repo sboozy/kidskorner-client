@@ -9,10 +9,9 @@ import {
 import RegisterForm from '../components/RegisterForm';
 
 export default class Register extends React.Component {
-
   static navigationOptions = {
-    header: null
-  }
+    title: "Register",
+  };
 
   render() {
     return (

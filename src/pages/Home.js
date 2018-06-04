@@ -4,8 +4,11 @@ import {
   Text,
   View,
   FlatList,
-  Image
+  Image,
+  TouchableHighlight
 } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+
 
 const BASE_URL = "https://kidskorner-api.herokuapp.com"
 
@@ -15,7 +18,6 @@ export default class Home extends React.Component {
     this.state = {
       data: []
     }
-    // this.fetchUsers = this.fetchUsers.bind(this)
   }
 
   fetchAllProducts() {
@@ -51,7 +53,14 @@ export default class Home extends React.Component {
     console.log('home component', this.state.data)
     // const picUrl = item.image_url;
     return (
-      <View>
+      <View style={styles.container}>
+        <TouchableHighlight style={styles.menu} onPress={() => this.props.navigation.openDrawer()}>
+          <Image
+            style={styles.menu}
+            source={require('../images/hamburger_icon.png')}
+            />
+        </TouchableHighlight>
+
         <FlatList
           data={this.state.data}
           showsVerticalScrollIndicator={false}
@@ -69,21 +78,25 @@ export default class Home extends React.Component {
   }
 }
 
-        // <Image style={styles.image}
-        //        source={{uri: {'https://i.imgur.com/Tuw6wye.jpg'}}} />
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor: '#607d8b',
+  },
+  menu: {
+    height: 40,
+    width: 40,
+    alignSelf: 'flex-end',
+    marginLeft: 5
   },
   flatListContainer: {
     flexGrow: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 5
   },
   image: {
-    // resizeMode: 'contain',
     width: '100%',
     height: 200
   },
@@ -91,11 +104,13 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     alignItems: 'center',
     fontSize: 20,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    marginTop: 5
   },
   description: {
     flexGrow: 1,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 5,
   }
 
 })

@@ -7,22 +7,85 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+const BASE_URL = "https://kidskorner-api.herokuapp.com"
+
 export default class RegisterForm extends React.Component {
+  constructor(props) {
+    super(props)
+      this.state={
+      username: '',
+      email:'',
+      pw_hash:'',
+      img_url: ''
+    }
+    this.registerUser = this.registerUser.bind(this);
+  }
+
+    registerUser() {
+      const username = this.state;
+      const email = this.state;
+      const pw_hash = this.state;
+
+      console.log('registerUser function', this.state);
+
+      fetch(`${BASE_URL}/auth/register`, {
+        method: 'POST',
+        header: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          email: email,
+          pw_hash: pw_hash,
+          img_url:''
+        }),
+      })
+      .then(resp =>{
+        return resp.json()
+      })
+      .then(resp =>{
+      console.log(resp.body)
+      })
+      .catch(err=>{
+        console.log(err);
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <TextInput style={styles.inputBox}
+                   autoCapitalize='none'
                    placeholder='Username'
-                   placeholderTextColor="#ffffff" />
+                   placeholderTextColor="#ffffff"
+                   selectionColor="#ffffff"
+                   onSubmitEditing={() => this.email.focus()}
+                   onChangeText={username => this.setState({username})}
+                   />
         <TextInput style={styles.inputBox}
+                   autoCapitalize='none'
                    placeholder='Email'
-                   placeholderTextColor="#ffffff" />
+                   placeholderTextColor="#ffffff"
+                   selectionColor="#ffffff"
+                   keyboardType='email-address'
+                   ref={input => this.email = input}
+                   onSubmitEditing={() => this.pw.focus()}
+                   onChangeText={email => this.setState({email})}
+                   />
         <TextInput style={styles.inputBox}
+                   autoCapitalize='none'
                    placeholder='Password'
                    secureTextEntry={true}
-                   placeholderTextColor="#ffffff" />
-        <TouchableOpacity style={styles.loginButton}>
-          <Text style={styles.loginText}>Sign up!</Text>
+                   placeholderTextColor="#ffffff"
+                   selectionColor="#ffffff"
+                   ref={input => this.pw = input}
+                   onChangeText={pw_hash => this.setState({pw_hash})}
+                   />
+        <TouchableOpacity style={styles.registerButton}>
+          <Text style={styles.registerText}
+                onPress={this.registerUser} >Sign up!
+          </Text>
         </TouchableOpacity>
       </View>
       )
@@ -39,18 +102,18 @@ const styles = StyleSheet.create({
     width: 300,
     backgroundColor: 'rgba(142, 172, 187, .7)',
     borderRadius: 25,
-    // backgroundColor: '#8eacbb',
+    color: '#ffffff',
     padding: 12,
     fontSize: 24,
     marginVertical: 8
   },
-  loginText: {
+  registerText: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#ffffff',
     textAlign: 'center'
   },
-  loginButton: {
+  registerButton: {
     width: 300,
     backgroundColor: '#34515e',
     borderRadius: 25,
