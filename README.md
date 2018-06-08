@@ -32,25 +32,14 @@ Other things to consider:
 ## Pages/Components
 + Login/Register Page
 + All postings page
-    + Nav Bar
-	+ Search box
 + View Single Posting(with message capability)
-    + Nav Bar
-    + 
 + Make a Post (edit Post/Delete Post)
-    + Nav Bar    
-	+ Clean Form with upload capability
 + Edit/Delete Post
-    + Nav Bar
     + Form with info with edit/delete button
 + Message History
-    + Nav Bar
 + Single Message    
-    + Nav Bar
 + User Profile 
-    + Nav Bar
 + Edit User Profile
-    + Nav Bar
 
 ## TABLES
 ![](./_design/tables/tables.png) 
@@ -58,6 +47,7 @@ Other things to consider:
 ## TECHNOLOGIES
 #### Frontend
 + React Native
++ React Navigation
 
 #### Backend
 + ~~Rails (with ActionCable)~~ 
@@ -69,3 +59,6 @@ Other things to consider:
 + LucidChart (for table schema)
 + Adobe XD (for wireframes)
 + Heroku (hosting backend API server)
+
+## TRIALS & TRIBULATIONS  
+This project originally started out as a React-Native on Rails project but after 5 days I scraped the Rails part and rebuilt my backend in Express.  This put me a little behind in my research and exploring of React-Native but I was able to use React Navigation to handle the routing of my pages.  Although the backend is setup for Auth, the front end is still a work in progress.  I have temporarily removed my restrict functions so that I could see all products and create a new product.  That being said, it took me several more days to realize that a 'POST' request to my API hosted on heroku needs to be sent with 'headers' not 'header'... (sigh)   I am still very excited to continue working on this mobile app, finishing my CRUD and adding a messaging feature. Please keep checking back for updates!
